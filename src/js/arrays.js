@@ -4,17 +4,19 @@
   фишка задания сделать свою реализацию, чтобы понять, как он работает под капотом. Для перебора советую использовать for цикл
  Помните, что вы передаете функцию, которая ожидает 3 аргумента, текущий элемент, индекс и сам массив. Автоматическая проверка будет это учитывать.
 */
+const array = [1, 2, 3];
 
 
 function forEach(array, callback) {
-  console.log(array);
-  callback();
+  for (let iterator = 0; iterator < array.length; iterator++) {
+    callback(array[iterator], iterator, array);
+  }
 }
 
-forEach(array, function (item, index, array) {
-  console.log(item, index);
-});
 
+forEach(array, (item) => {
+  console.log(item);
+})
 
 /* Функция принимает в себе первым аргументом массив, вторым функцию которая будет вызываться для каждого элемента массива
  вот документация https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map
@@ -22,13 +24,15 @@ forEach(array, function (item, index, array) {
  Фишка задания сделать свою реализацию, чтобы понять, как он работает под капотом. Для перебора советую использовать for цикл
  Помните, что вы передаете функцию, которая ожидает 3 аргумента, текущий элемент, индекс и сам массив. Автоматическая проверка будет это учитывать.
 */
+
 function map(array, callback) {
-  console.log(array);
-  callback();
+  for (let iterator = 0; iterator < array.length; iterator++) {
+    callback(array[iterator], iterator, array);
+  }
 }
 
-map(array, function (item, index, array) {
-  return item * 4;
+map(array, (item) => {
+  console.log(item * 3);
 })
 
 /* Функция принимает в себе первым аргументом массив, вторым функцию которая будет вызываться для каждого элемента массива
@@ -37,12 +41,14 @@ map(array, function (item, index, array) {
  Фишка задания сделать свою реализацию, чтобы понять, как он работает под капотом. Для перебора советую использовать for цикл
  Помните, что вы передаете функцию, которая ожидает 3 аргумента, текущий элемент, индекс и сам массив. Автоматическая проверка будет это учитывать.
 */
+
 function filter(array, callback) {
-  console.log(array);
-  callback();
+  for (let iterator = 0; iterator < array.length; iterator++) {
+    callback(array[iterator], iterator, array);
+  }
 }
 
-array.filter((item) => item > 2);
+console.log(array.filter((item) => item > 2));
 
 /* Функция принимает в себе первым аргументом массив, вторым функцию которая будет вызываться для каждого элемента массива, 3 аргумент изначальный вариант
  вот документация https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce
@@ -54,11 +60,12 @@ array.filter((item) => item > 2);
  Помните, что вы передаете функцию, которая ожидает 3 аргумента, текущий элемент, индекс и сам массив. Автоматическая проверка будет это учитывать.
 */
 function reduce(array, callback, initialValue) {
-  console.log(array);
-  callback();
+  for (let iterator = 0; iterator < array.length; iterator++) {
+    callback(array[iterator], iterator, array);
+  }
 }
 
-array.reduce((previousValue, currentValue) => previousValue + currentValue, 0);
+console.log(array.reduce((previousValue, currentValue) => previousValue + currentValue, 0));
 
 /* Функция принимает в себе первым аргументом массив, вторым функцию которая будет вызываться для каждого элемента массива
  вот документация https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/some
@@ -67,12 +74,12 @@ array.reduce((previousValue, currentValue) => previousValue + currentValue, 0);
  Помните, что вы передаете функцию, которая ожидает 3 аргумента, текущий элемент, индекс и сам массив. Автоматическая проверка будет это учитывать.
 */
 function some(array, callback) {
-  console.log(array);
-  callback();
+  for (let iterator = 0; iterator < array.length; iterator++) {
+    callback(array[iterator], iterator, array);
+  }
 }
 
-array.some((item) => item > 0);
-
+console.log(array.some((item)=> item > 8))
 /* Функция принимает в себе первым аргументом массив, вторым функцию которая будет вызываться для каждого элемента массива
  вот документация https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/some
  Это используется для удобного быстрого перебора массива. Функция должна ВЕРНУТЬ true или false. Если хотя бы для одного элемента callback вернет false, то вся функция возвращает false/
@@ -80,13 +87,12 @@ array.some((item) => item > 0);
  Помните, что вы передаете функцию, которая ожидает 3 аргумента, текущий элемент, индекс и сам массив. Автоматическая проверка будет это учитывать.
 */
 function every(array, callback) {
-  console.log(array);
-  callback();
+  for (let iterator = 0; iterator < array.length; iterator++) {
+    callback(array[iterator], iterator, array);
+  }
 }
 
-array.every((item,index,array)=> {
-  return item >1;
-})
+console.log(array.every((item)=> item > 8));
 
 // Эту часть не удаляем, она важна для проверки результата
 module.exports = {
